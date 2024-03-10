@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.js';
+import Header from './component/Navbar/Header';
+import Shop from './pages/Shop';
+import Product from './pages/Product';
+import ShopCategory from './pages/ShopCategory';
+import Card from './pages/Card';
+import LoginSignup from './pages/LoginSignup';
+import Footer from './component/Footer/Footer';
+import SignupPage from './pages/SignupPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Shop />} />
+          <Route path="/hair" element={<ShopCategory category="hair" />} />
+          <Route path="/skin" element={<ShopCategory category="skin" />} />
+          <Route path="/product" element={<Product />} />
+          <Route path="/productId" element={<Product />} />
+          <Route path="/card" element={<Card />} />
+          <Route path="/login" element={<LoginSignup />} />
+          <Route path="/signup" element={<SignupPage />} />
+        </Routes>
+        <Footer />
+      </Router>
     </div>
   );
 }
