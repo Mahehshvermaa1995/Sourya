@@ -8,7 +8,7 @@ import { Image } from 'react-bootstrap';
 const Hero = () => {
   return (
     <div className="p-1">
-      <Carousel >
+      <Carousel  >
         <Carousel.Item>
         <Image src={slider1} alt="Slider 1" fluid />
         

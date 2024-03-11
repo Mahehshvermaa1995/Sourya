@@ -12,7 +12,7 @@ const ShopCategory = (props) => {
           {all_product.map((item, i) => {
             if (props.category === item.category) {
               return (
-                <Col md={3} className='mt-2' key={i}>
+                <Col md={3} className='mt-2 mb-3' key={i}>
                   <Item
                     id={item.id}
                     name={item.name}
